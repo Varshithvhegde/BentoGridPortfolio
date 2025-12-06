@@ -1,0 +1,36 @@
+<UserControl
+    x:Class="Portfolio.Presentation.SolarSystem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="300">
+
+    <Grid Background="Transparent">
+        <Canvas x:Name="SpaceCanvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <!-- Orbits and Planets will be added here dynamically -->
+        </Canvas>
+
+        <!-- Central Sun (Dev.to Logo) -->
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="60" Height="60">
+            <Ellipse Fill="White"/>
+            <TextBlock Text="D" 
+                       FontSize="32" 
+                       FontWeight="Bold" 
+                       Foreground="Black" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center"/>
+        </Grid>
+        
+        <!-- Overlay Info -->
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="16">
+            <TextBlock Text="Dev.to Universe" Foreground="White" FontWeight="Bold" Opacity="0.5"/>
+            <TextBlock Text="Click to Warp" Foreground="#B8B8B8" FontSize="10" Opacity="0.5"/>
+        </StackPanel>
+        
+        <!-- Click Target -->
+        <Grid Background="Transparent" PointerPressed="OnCanvasPressed"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,65 @@
+<UserControl
+    x:Class="Portfolio.Presentation.MorphingBlob"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="280"
+    d:DesignWidth="380">
+
+    <Grid Background="#0D1117">
+        <Canvas x:Name="BlobCanvas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        
+        <!-- Content Overlay -->
+        <Grid Padding="24">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Border Background="#A855F7" 
+                    Width="44" Height="44" 
+                    CornerRadius="12"
+                    HorizontalAlignment="Left">
+                <TextBlock Text="P" 
+                           FontSize="22" 
+                           FontWeight="Bold" 
+                           Foreground="White"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+            </Border>
+
+            <StackPanel Grid.Row="1" Spacing="8" VerticalAlignment="Center">
+                <TextBlock Text="Poetique" 
+                           FontSize="18" 
+                           FontWeight="Bold" 
+                           Foreground="White"/>
+                <TextBlock Text="Image editor platform for poems using Next.js 14 &amp; Pexels API." 
+                           FontSize="12" 
+                           Foreground="#E0E0E0"
+                           TextWrapping="Wrap"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" Spacing="6">
+                <Border Background="#2D3348" Padding="10,5" CornerRadius="6">
+                    <TextBlock Text="NEXT.JS" FontSize="9" Foreground="#B8B8B8"/>
+                </Border>
+                <Border Background="#2D3348" Padding="10,5" CornerRadius="6">
+                    <TextBlock Text="SHADCN" FontSize="9" Foreground="#B8B8B8"/>
+                </Border>
+                <Border Background="#2D3348" Padding="10,5" CornerRadius="6">
+                    <TextBlock Text="PEXELS API" FontSize="9" Foreground="#B8B8B8"/>
+                </Border>
+            </StackPanel>
+            
+            <FontIcon Grid.Row="0" 
+                      Glyph="&#xE8A7;" 
+                      FontSize="14" 
+                      Foreground="#B8B8B8"
+                      HorizontalAlignment="Right"
+                      VerticalAlignment="Top"/>
+        </Grid>
+    </Grid>
+</UserControl>

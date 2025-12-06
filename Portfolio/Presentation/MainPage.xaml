@@ -1,0 +1,217 @@
+﻿<Page x:Class="Portfolio.Presentation.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:Portfolio.Presentation"
+      xmlns:uen="using:Uno.Extensions.Navigation.UI"
+      xmlns:utu="using:Uno.Toolkit.UI"
+      xmlns:um="using:Uno.Material"
+      NavigationCacheMode="Required"
+      Background="#0A0E1A">
+
+    <ScrollViewer IsTabStop="True">
+        <Grid utu:SafeArea.Insets="VisibleBounds" Padding="24">
+            <!-- Main Bento Grid Container -->
+            <Grid MaxWidth="1400" HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="380" />
+                    <ColumnDefinition Width="380" />
+                    <ColumnDefinition Width="380" />
+                    <ColumnDefinition Width="260" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="420" />
+                    <RowDefinition Height="280" />
+                    <RowDefinition Height="280" />
+                    <RowDefinition Height="180" />
+                </Grid.RowDefinitions>
+
+                <!-- Profile Card - Large -->
+                <Border x:Name="ProfileCard" Grid.Column="0" Grid.Row="0" 
+                Background="#1A1F35" 
+                CornerRadius="24" 
+                Padding="0" 
+                Margin="8"
+                Opacity="0"
+                RenderTransformOrigin="0.5,0.5"
+                PointerEntered="Card_PointerEntered"
+                PointerExited="Card_PointerExited">
+                    <Border.RenderTransform>
+                        <CompositeTransform />
+                    </Border.RenderTransform>
+                    <local:InteractiveProfile HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                </Border>
+
+                <!-- Experience Card - Tall -->
+                <Border x:Name="ExperienceCard" Grid.Column="1" Grid.Row="0" 
+                Background="#1A1F35" 
+                CornerRadius="24" 
+                Padding="24" 
+                Margin="8"
+                Opacity="0"
+                RenderTransformOrigin="0.5,0.5"
+                PointerEntered="Card_PointerEntered"
+                PointerExited="Card_PointerExited">
+                    <Border.RenderTransform>
+                        <CompositeTransform />
+                    </Border.RenderTransform>
+                    <local:HolographicTimeline HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                </Border>
+
+                <!-- Skill Set Card - Large -->
+                <Border x:Name="SkillSetCard" Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="2"
+                Background="#1A1F35" 
+                CornerRadius="24" 
+                Padding="0" 
+                Margin="8"
+                Opacity="0"
+                RenderTransformOrigin="0.5,0.5"
+                PointerEntered="Card_PointerEntered"
+                PointerExited="Card_PointerExited">
+                    <Border.RenderTransform>
+                        <CompositeTransform />
+                    </Border.RenderTransform>
+                    <local:InteractiveSkillSet HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                </Border>
+
+                <!-- Poetique - Medium -->
+                <Border x:Name="PoetiqueCard" Grid.Column="0" Grid.Row="1" 
+                Background="#1A1F35" 
+                CornerRadius="24" 
+                Padding="0" 
+                Margin="8"
+                Opacity="0"
+                RenderTransformOrigin="0.5,0.5"
+                PointerEntered="Card_PointerEntered"
+                PointerExited="Card_PointerExited">
+                    <Border.RenderTransform>
+                        <CompositeTransform />
+                    </Border.RenderTransform>
+                    <local:MorphingBlob HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                </Border>
+
+                <!-- FreeShare - Medium -->
+                <Border x:Name="FreeShareCard" Grid.Column="1" Grid.Row="1" 
+                Background="#1A1F35" 
+                CornerRadius="24" 
+                Padding="0" 
+                Margin="8"
+                Opacity="0"
+                RenderTransformOrigin="0.5,0.5"
+                PointerEntered="Card_PointerEntered"
+                PointerExited="Card_PointerExited">
+                    <Border.RenderTransform>
+                        <CompositeTransform />
+                    </Border.RenderTransform>
+                    <local:SecureTransfer HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                </Border>
+
+                <!-- TouchReno - Medium -->
+                <Border x:Name="TouchRenoCard" Grid.Column="2" Grid.Row="1" 
+                Background="#1A1F35" 
+                CornerRadius="24" 
+                Padding="0" 
+                Margin="8"
+                Opacity="0"
+                RenderTransformOrigin="0.5,0.5"
+                PointerEntered="Card_PointerEntered"
+                PointerExited="Card_PointerExited">
+                    <Border.RenderTransform>
+                        <CompositeTransform />
+                    </Border.RenderTransform>
+                    <local:RoomScanner HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                </Border>
+                <!-- Contact Icons - Small Vertical -->
+                <Border x:Name="ContactCard" Grid.Column="3" Grid.Row="1" Grid.RowSpan="2"
+                Background="#1A1F35" 
+                CornerRadius="24" 
+                Padding="0" 
+                Margin="8"
+                Opacity="0"
+                RenderTransformOrigin="0.5,0.5"
+                PointerEntered="Card_PointerEntered"
+                PointerExited="Card_PointerExited">
+                    <Border.RenderTransform>
+                        <CompositeTransform />
+                    </Border.RenderTransform>
+                    <local:FloatingConstellation HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                </Border>
+
+                <!-- Dev.to Blog - Large -->
+                <Border x:Name="DevToCard" Grid.Column="0" Grid.Row="2" 
+                Background="#1A1F35" 
+                CornerRadius="24" 
+                Padding="0" 
+                Margin="8"
+                Opacity="0"
+                RenderTransformOrigin="0.5,0.5"
+                PointerEntered="Card_PointerEntered"
+                PointerExited="Card_PointerExited">
+                    <Border.RenderTransform>
+                        <CompositeTransform />
+                    </Border.RenderTransform>
+                    <local:SolarSystem HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                </Border>
+
+                <!-- NotePage - Medium -->
+                <Border x:Name="NotePageCard" Grid.Column="1" Grid.Row="2" 
+                Background="#1A1F35" 
+                CornerRadius="24" 
+                Padding="0" 
+                Margin="8"
+                Opacity="0"
+                RenderTransformOrigin="0.5,0.5"
+                PointerEntered="Card_PointerEntered"
+                PointerExited="Card_PointerExited">
+                    <Border.RenderTransform>
+                        <CompositeTransform />
+                    </Border.RenderTransform>
+                    <local:BugBlaster HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                </Border>
+
+                <!-- Second Blog Article -->
+                <Border x:Name="BlogCard" Grid.Column="2" Grid.Row="2" 
+                Background="#1A1F35" 
+                CornerRadius="24" 
+                Padding="0" 
+                Margin="8"
+                Opacity="0"
+                RenderTransformOrigin="0.5,0.5"
+                PointerEntered="Card_PointerEntered"
+                PointerExited="Card_PointerExited">
+                    <Border.RenderTransform>
+                        <CompositeTransform />
+                    </Border.RenderTransform>
+                    <local:MatrixRain HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                </Border>
+
+                <!-- Code Quote Banner - Wide -->
+                <Border x:Name="QuoteCard" Grid.Column="0" Grid.Row="3" 
+                Grid.ColumnSpan="4"
+                Background="#0D1117" 
+                CornerRadius="24" 
+                Padding="16" 
+                Margin="8"
+                Opacity="0"
+                RenderTransformOrigin="0.5,0.5"
+                PointerEntered="Card_PointerEntered"
+                PointerExited="Card_PointerExited">
+                    <Border.RenderTransform>
+                        <CompositeTransform />
+                    </Border.RenderTransform>
+                    <Grid>
+                        <local:SnakeGrid HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                        <TextBlock Text="&lt;Code with Creativity /&gt;"  
+                                   FontSize="24" 
+                                   FontWeight="Bold" 
+                                   Foreground="#10B981"
+                                   FontFamily="Consolas"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Opacity="0.8"
+                                   IsHitTestVisible="False"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+</Page>

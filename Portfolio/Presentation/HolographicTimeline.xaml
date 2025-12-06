@@ -1,0 +1,133 @@
+<UserControl
+    x:Class="Portfolio.Presentation.HolographicTimeline"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="420"
+    d:DesignWidth="380">
+
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <StackPanel Orientation="Horizontal" Spacing="12" Margin="0,0,0,20">
+            <Border Background="#10B981" 
+                    Width="36" Height="36" 
+                    CornerRadius="8">
+                <FontIcon Glyph="&#xE7C3;" 
+                          FontFamily="Segoe MDL2 Assets"
+                          Foreground="White" 
+                          FontSize="18"/>
+            </Border>
+            <TextBlock Text="Experience" 
+                       FontSize="22" 
+                       FontWeight="Bold" 
+                       Foreground="White"
+                       VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Timeline Container -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Vertical Line -->
+            <Rectangle Width="2" HorizontalAlignment="Center" VerticalAlignment="Stretch" Fill="#2D3348" RadiusX="1" RadiusY="1"/>
+            
+            <!-- Active Line Indicator (Animated) -->
+            <Rectangle x:Name="ActiveLine" Width="2" HorizontalAlignment="Center" VerticalAlignment="Top" Height="0" Fill="#10B981" RadiusX="1" RadiusY="1"/>
+
+            <!-- Items -->
+            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Spacing="24" VerticalAlignment="Top" Margin="0,10,0,0">
+                
+                <!-- Job 1 -->
+                <Grid x:Name="Job1" PointerEntered="Job_PointerEntered" PointerExited="Job_PointerExited" Tag="0" Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!-- Node -->
+                    <Grid Width="16" Height="16" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,4,0,0">
+                        <Ellipse Fill="#1A1F35" Stroke="#10B981" StrokeThickness="2"/>
+                        <Ellipse x:Name="Job1Dot" Fill="#10B981" Width="8" Height="8" Opacity="0">
+                            <Ellipse.RenderTransform>
+                                <ScaleTransform ScaleX="0" ScaleY="0" CenterX="4" CenterY="4"/>
+                            </Ellipse.RenderTransform>
+                        </Ellipse>
+                    </Grid>
+
+                    <!-- Content -->
+                    <StackPanel Grid.Column="1" Spacing="4">
+                        <TextBlock Text="Associate Software Engineer" FontSize="16" FontWeight="SemiBold" Foreground="White"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="KPIT TECHNOLOGIES" FontSize="11" Foreground="#10B981" FontWeight="SemiBold"/>
+                            <TextBlock Text="JUNE 2023 - PRESENT" Grid.Column="1" FontSize="11" Foreground="#10B981" FontWeight="SemiBold" Opacity="0.8"/>
+                        </Grid>
+                        
+                        <!-- Details (Collapsible) -->
+                        <StackPanel x:Name="Job1Details" Spacing="4" Margin="0,8,0,0" Opacity="1">
+                            <StackPanel.RenderTransform>
+                                <TranslateTransform Y="0"/>
+                            </StackPanel.RenderTransform>
+                            <TextBlock Text="• Led D2 Cloud Infrastructure initiatives." FontSize="12" Foreground="#B8B8B8"/>
+                            <TextBlock Text="• Built full-stack apps using React and Flask (reducing data processing time by 95%)." FontSize="12" Foreground="#B8B8B8" TextWrapping="Wrap"/>
+                            <TextBlock Text="• Developed backend solutions using Python on AWS." FontSize="12" Foreground="#B8B8B8" TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+
+                <!-- Job 2 -->
+                <Grid x:Name="Job2" PointerEntered="Job_PointerEntered" PointerExited="Job_PointerExited" Tag="1" Background="Transparent">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Node -->
+                    <Grid Width="16" Height="16" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,4,0,0">
+                        <Ellipse Fill="#1A1F35" Stroke="#2D3348" StrokeThickness="2" x:Name="Job2Ring"/>
+                        <Ellipse x:Name="Job2Dot" Fill="#10B981" Width="8" Height="8" Opacity="0">
+                            <Ellipse.RenderTransform>
+                                <ScaleTransform ScaleX="0" ScaleY="0" CenterX="4" CenterY="4"/>
+                            </Ellipse.RenderTransform>
+                        </Ellipse>
+                    </Grid>
+
+                    <!-- Content -->
+                    <StackPanel Grid.Column="1" Spacing="4">
+                        <TextBlock Text="React Developer" FontSize="16" FontWeight="SemiBold" Foreground="White" Opacity="0.7" x:Name="Job2Title"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="MOBIEZY SOLUTIONS" FontSize="11" Foreground="#B8B8B8" FontWeight="SemiBold" x:Name="Job2Company"/>
+                            <TextBlock Text="FEB 2023 - APRIL 2023" Grid.Column="1" FontSize="11" Foreground="#B8B8B8" FontWeight="SemiBold" Opacity="0.6" x:Name="Job2Date"/>
+                        </Grid>
+
+                        <!-- Details (Collapsible) -->
+                        <StackPanel x:Name="Job2Details" Spacing="4" Margin="0,8,0,0" Opacity="0.5">
+                            <StackPanel.RenderTransform>
+                                <TranslateTransform Y="0"/>
+                            </StackPanel.RenderTransform>
+                            <TextBlock Text="• Developed Progressive Web Apps (PWA)." FontSize="12" Foreground="#B8B8B8"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

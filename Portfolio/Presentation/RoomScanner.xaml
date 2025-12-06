@@ -1,0 +1,51 @@
+<UserControl
+    x:Class="Portfolio.Presentation.RoomScanner"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="300">
+
+    <Grid Background="Transparent">
+        <Grid.Clip>
+            <RectangleGeometry Rect="0,0,300,300" x:Name="ClipRect"/>
+        </Grid.Clip>
+        
+        <!-- 3D Scene Canvas -->
+        <Canvas x:Name="SceneCanvas" IsHitTestVisible="False"/>
+
+        <!-- Overlay UI -->
+        <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="16">
+            <TextBlock Text="TouchReno" 
+                       FontSize="20" 
+                       FontWeight="Bold" 
+                       Foreground="White"/>
+            <TextBlock Text="AR Renovation App" 
+                       FontSize="12" 
+                       Foreground="#B8B8B8" 
+                       Opacity="0.8"/>
+        </StackPanel>
+
+        <!-- AR Badge -->
+        <Border Background="#10B981" 
+                CornerRadius="4" 
+                Padding="6,2" 
+                HorizontalAlignment="Right" 
+                VerticalAlignment="Top" 
+                Margin="16">
+            <TextBlock Text="AR" 
+                       FontSize="10" 
+                       FontWeight="Bold" 
+                       Foreground="White"/>
+        </Border>
+        
+        <!-- Interaction Area -->
+        <Grid Background="Transparent" 
+              PointerPressed="OnPointerPressed" 
+              PointerMoved="OnPointerMoved" 
+              PointerReleased="OnPointerReleased"
+              PointerExited="OnPointerReleased"/>
+    </Grid>
+</UserControl>
